@@ -1,0 +1,113 @@
+$color-cyan: hsl(179, 62%, 43%);
+$color-bryellow: hsl(71, 73%, 54%);
+$color-Lgray: hsl(204, 43%, 93%);
+$color-grayishblue: hsl(218, 22%, 67%);
+$color-white: #fff;
+$color-Lcyan: rgb(79, 190, 188);
+$color-mainbg: rgb(230, 239, 246);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Karla, sans-serif;
+    background-color: $color-mainbg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.component{
+    max-width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media all and (min-width: 800px)
+    {
+        max-width: 600px;
+    }
+    & h1 {
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+    & article {
+        padding: 2rem 1.5rem;
+        @media all and (min-width: 800px)
+        {
+            padding: 2rem;
+        }
+    }
+    & button{
+        cursor: pointer;
+        border: none;
+        background-color: $color-bryellow;
+        width: 100%;
+        padding: 1em;
+        color: $color-Lgray;
+        font-size: 1em;
+        border-radius: 5px;
+        box-shadow: 0 0 15px gray;
+        margin-top: 1.5rem;
+    }
+
+    & .heading{
+        background-color: $color-white;
+        
+        & h1{
+            color: $color-cyan;
+        }
+        & h2{
+            font-size: .9em;
+            color: $color-bryellow;
+            margin-bottom: 1.5rem;
+        }
+        & p{
+            font-size: .8em;
+            color: $color-grayishblue;
+            line-height: 20px;
+        }
+    } //heading
+
+    & .wrapper {
+        color: $color-Lgray;
+
+        @media all and (min-width: 800px)
+        {
+            display: flex;
+            & > *{
+                flex: 1;
+            }
+        }
+        & .second{
+            background-color: $color-cyan;
+            &--light {
+                color: $color-Lcyan;
+                vertical-align: middle;
+                margin-bottom: .6rem;
+                & span{
+                    color: $color-Lgray;
+                    font-size: 2em;
+                    font-weight: 700;
+                    vertical-align: middle;
+                }
+            } //light
+        } //second
+    
+        & .third {
+            background-color: $color-Lcyan;
+            & p{
+                font-size: .8em;
+                line-height: 20px;
+            }
+        } //third
+    }
+}
